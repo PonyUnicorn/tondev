@@ -47,7 +47,7 @@ Fully supported features and feature groups.
 | **Abstract contracts**                     | `contract A { function u() public; } `                       |                                                              |
 | **Metadata**                               |                                                              | ABI, version, etc.                                           |
 | **Super**                                  | `super.method()`                                             |                                                              |
-| **Return**                                 |                                                              | See more [about usage particularities of return and callback](https://docs.ton.dev/86757ecb2/p/535dbc/t/08c41f) in TON |
+| **Return**                                 |                                                              | |
 | **Multiple Inheritance and linearization** |                                                              |                                                              |
 | **Arguments for base constructors**        |                                                              |                                                              |
 | **Returning multiple values**              | `return (n1, n2, n3);`                                       |                                                              |
