@@ -4,6 +4,7 @@
 
 Fully supported features and feature groups.
 
+<<<<<<< Updated upstream
 | **FEATURE**                                | **USAGE**                                                    | **NOTES**                                                    |
 | ------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Pragmas**                                | Pragma...                                                    |                                                              |
@@ -50,6 +51,54 @@ Fully supported features and feature groups.
 | **Multiple Inheritance and linearization** |                                                              |                                                              |
 | **Arguments for base constructors**        |                                                              |                                                              |
 | **Returning multiple values**              | `return (n1, n2, n3);`                                       |                                                              |
+=======
+| **FEATURE**                                | **USAGE**                                                    | **NOTES**                             |
+| ------------------------------------------ | ------------------------------------------------------------ | ------------------------------------- |
+| **Pragmas**                                | Pragma...                                                    |                                       |
+| **Version**                                | pragma solidity >=0.5.0 <0.6.0                               |                                       |
+| **Experimental**                           | pragma experimental ...                                      |                                       |
+| **ABIEncoderV2**                           | pragma experimental ABIEncoderV2                             |                                       |
+| **Import**                                 | `import "filename" ``import * as symbolName from "filename" ``import {symbol1 as alias, symbol2} from "filename"` | Additional test are in the pipeline   |
+| **Comments**                               | //, /* */                                                    |                                       |
+| **Boolean:**                               | bool, true, false                                            |                                       |
+| **operators**                              | !, &&, II, ==, !=                                            |                                       |
+| **lazy evaluation**                        | `f(x) == true ⇒ (f(x) || g(y)) == true`                      |                                       |
+| **integers**                               | `intN/uintN`, `N=8..256`                                     |                                       |
+| **comparisons**                            | `<=`, `<`,` ==`,` !=`,` >=`,` >`                             |                                       |
+| **Bit Operators:**                         | `&`, `|`,` ^`,` ~`                                           |                                       |
+| **shift**                                  | `<<`, `>>`                                                   |                                       |
+| **base arithmetic**                        | `+`, `-`, `unary -`, `*`                                     |                                       |
+| **division**                               | `/`                                                          |                                       |
+| **modulo**                                 | `%`                                                          |                                       |
+| **exponent**                               | `**`                                                         |                                       |
+| **Ternary operator**                       | `b = true ? 2 : 3;`                                          |                                       |
+| **Enums**                                  | `enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }` |                                       |
+| **Return variables**                       |                                                              |                                       |
+| **Structs**                                | `struct`                                                     |                                       |
+| **Mapping types**                          | `mapping`                                                    |                                       |
+| **Integer types**                          |                                                              |                                       |
+| **Conversions between Elementary Types**   | Implicit conversions	Explicit conversions                 |                                       |
+| **Order of Evaluation of Expressions**     | not specified, lazy bools                                    |                                       |
+| **Assignments for arrays and structs**     |                                                              |                                       |
+| **Assignments in expressions**             |                                                              |                                       |
+| **Member constants**                       |                                                              |                                       |
+| **Default member values**                  |                                                              |                                       |
+| **View functions**                         | `function f(uint a) public view returns (uint)`              |                                       |
+| **Pure functions**                         | `function f(uint a) public pure returns (uint)`              |                                       |
+| **Now**                                    |                                                              |                                       |
+| **Arrays in events**                       |                                                              |                                       |
+| **Return arrays in public methods**        |                                                              |                                       |
+| **Nested structure encoding**              |                                                              |                                       |
+| **Contract types**                         | `My contractC`                                               |                                       |
+| **Using for**                              | Using B for A                                                | Library functions are added to a type |
+| **Abstract contracts**                     | `contract A { function u() public; } `                       |                                       |
+| **Metadata**                               |                                                              | ABI, version, etc.                    |
+| **Super**                                  | `super.method()`                                             |                                       |
+| **Return**                                 |                                                              |                                       |
+| **Multiple Inheritance and linearization** |                                                              |                                       |
+| **Arguments for base constructors**        |                                                              |                                       |
+| **Returning multiple values**              | `return (n1, n2, n3);`                                       |                                       |
+>>>>>>> Stashed changes
 
 ## Partially  Supported/Planned
 
@@ -86,7 +135,7 @@ Note that implementation priority depends on the demand for the feature, its rel
 | **Rational literals**                                     | `.1, 2e-10`                                                  | Planned                                                      |
 | **Hexadecimal literals**                                  | `hex"001122FF"`                                              | Currently tested                                             |
 | **Interfaces**                                            | `interface Token { struct ... function ... }`                | Only pure interfaces are supported                           |
-| **Function Modifiers**                                    |                                                              | Unsupported now, planned to support. See also [Hints and workarounds](https://docs.ton.dev/86757ecb2/p/535dbc/t/2756ce) |
+| **Function Modifiers**                                    |                                                              | Unsupported now, planned to support. |
 | **Function calls**                                        |                                                              | The feature group is partially supported                     |
 | **internal function calls**                               |                                                              | Supported                                                    |
 | **external function calls**                               |                                                              | Supported                                                    |
@@ -101,7 +150,7 @@ Note that implementation priority depends on the demand for the feature, its rel
 | **balance**                                               | `address.balance`                                            | Supported                                                    |
 | **transfer**                                              | `addressPayable.transfer(N)`                                 | Supported                                                    |
 | **send**                                                  | `addressPayable.send(N)`                                     | Supported                                                    |
-| **call, delegatecall, staticcall**                        | *`call(bytes)`                                               | Not supported for security reasons, see additional information [here](https://docs.ton.dev/86757ecb2/p/535dbc/t/00e51e). |
+| **call, delegatecall, staticcall**                        | *`call(bytes)`                                               | |
 | **Arrays:**                                               |                                                              | This feature groups is partially supported                   |
 | **fixed size**                                            | `[k]`                                                        | Supported                                                    |
 | **dynamic size**                                          | `[]`                                                         | Supported                                                    |
@@ -121,7 +170,7 @@ Note that implementation priority depends on the demand for the feature, its rel
 | **Keccak-256 hash**                                       | `keccak256(bytes memory) returns (bytes32)`                  | This option will not be supported. An analog is planned for release within the next few months based on `tvm_hash()`. No workarounds at this moment. |
 | **SHA-256 hash**                                          | `sha256(bytes memory) returns (bytes32)`                     | Supported partially                                          |
 | **RIPEMD-160 hash**                                       | `ripemd160(bytes memory) returns (bytes20)`                  | This option will not be supported. An analog is planned for release within the next few months based on tvm_hash(). No workarounds at this moment. |
-| **erecovery**                                             | `ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address)` | EVM-specific operation; replaced by signing and verification mechanic described in the [ABI Spec](https://docs.ton.dev/86757ecb2/p/70c253) |
+| **erecovery**                                             | `ecrecover(bytes32 hash, uint8 v, bytes32 r, bytes32 s) returns (address)` | EVM-specific operation; replaced by signing and verification mechanic described in the [ABI Spec](Compilers/ABI Specification.md) |
 | **Fixed-size byte arrays**                                | `bytes1..32 bts`                                             | Partial support soon. **bytes32** pending release, testing under way. |
 | **Control structures:**                                   |                                                              | The feature groups is partially supported, see details below. |
 | **if, else**                                              | `if () { } else { }`                                         | Supported                                                    |
@@ -164,7 +213,7 @@ Depending on the project progress, we may decide to provide support for some of 
 
 | **NAME**                                                   | **NOTES/USAGE**                                              | **MORE**                                                     |
 | ---------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Inline, Solidity, Standalone Assembly**                  | Ethereum-specific feature                                    | [Hints and suggestions](https://docs.ton.dev/86757ecb2/p/535dbc/t/37a6c1) |
+| **Inline, Solidity, Standalone Assembly**                  | Ethereum-specific feature                                    |  |
 | **SMTChecker**                                             | pragma experimental SMTChecker                               |                                                              |
 | **Natspec**                                                | ///, @title, @author, @dev, @param, @return, @notice         | Currently not used in the TVM. Later support may be considered. Refer to the [original documentation](https://solidity.readthedocs.io/en/v0.5.11/natspec-format.html) for more details on the feature. |
 | **Call Functions**                                         |                                                              | Not supported for security reasons. See also the Reference guide. |
@@ -180,7 +229,7 @@ Depending on the project progress, we may decide to provide support for some of 
 | **Special chars**                                          | `\<newline>`, `\\`,` \'` ,`\"` ,`\b `,`\f` ,`\n,` `\r`, `\t`, `\v`, `\xNN`, `\uNNNN` | To be deployed in the framework of literals support          |
 | **Fixed point numbers, operations**                        | fixed/ufixed, fixed/ufixedMxN, <=, <, ==, !=, >=, >, +, -, unary -, *, /, % | Currently the feature is not supported. It is planned to implement mapping connecting text representation of an instruction to its numerical counterpart. On the total, there are 476 instructions. The map will be used for text assembly generation. |
 | **Ether units**                                            | wei, finney, szabo, ether                                    | Not supported, EVM-specific                                  |
-| **Time units**                                             | seconds, minutes, hours, days, weeks                         | Not supported now, see [a workaround](https://docs.ton.dev/86757ecb2/p/535dbc/t/75c163) |
+| **Time units**                                             | seconds, minutes, hours, days, weeks                         | Not supported now. |
 | **Type information:**                                      |                                                              | No plans to support this whole group yet. Usage potential unclear. |
 | **type**                                                   | `type(c)`                                                    |                                                              |
 | **name**                                                   |                                                              |                                                              |
@@ -199,5 +248,5 @@ Depending on the project progress, we may decide to provide support for some of 
 | **Creating contracts via new**                             |                                                              |                                                              |
 
 
-  
+
 
