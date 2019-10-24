@@ -119,7 +119,7 @@ For example you can generate message to call the contract by SDK function. That 
 
 **Q**: How does one derive the message (or transaction) hash from a signed bag-of-cells message to a contract? Can you provide details on how we can compute this on our own? (Ideally we can compute this so we can look it up after submitting to the network.)
 
-**A**: The SDK returns hash of the generated message as a message ID. We will provide a function which will return hash for a specific message in the next few weeks. To calculate hash manually, deserialize the bag of cells into a tree of cells and calculate the representation hash of the root cell as described in paragraph `3.1.5` of the original TVM specification. It's quite an effort, though.
+**A**: The SDK returns hash of the generated message as a message ID. We will provide a function which will return hash for a specific message in the next few weeks. To calculate hash manually, deserialize the bag of cells into a tree of cells and calculate the representation hash of the root cell as described in paragraph 3.1.5 of the original [TVM specification](/TON Blockchain/TON Specifications/TON Virtual Machine). It's quite an effort, though.
 
 ------
 
@@ -131,7 +131,7 @@ For example you can generate message to call the contract by SDK function. That 
 
 **Q**: Can you provide more explicit details or provide an example of how an account’s address is derived from the compiled contract and initial state and specifically how that hash is computed and over what components? Source code is also helpful here if you can provide it.
 
-**A**: A blockchain account contains the `State Init` field. It stores the contract code and persisted data. `State init` is also tree of cells. At contract deployment this field is transferred alongside the deploying message (so called constructor message) and is set as the contract initial state. The representation hash (see paragraph **3.1.5** of the TVM specification) of the contract initial state is the account address. The node checks that the state init hash of the deployment message is equal to the destination address. The SDK will have a function for computing account address by its initial state. The SDK source code will be available soon.
+**A**: A blockchain account contains the `State Init` field. It stores the contract code and persisted data. `State init` is also tree of cells. At contract deployment this field is transferred alongside the deploying message (so called constructor message) and is set as the contract initial state. The representation hash (see paragraph 3.1.5 of the [TVM specification](/TON Blockchain/TON Specifications/TON Virtual Machine)) of the contract initial state is the account address. The node checks that the state init hash of the deployment message is equal to the destination address. The SDK will have a function for computing account address by its initial state. The SDK source code will be available soon.
 
 ------
 
@@ -152,4 +152,3 @@ For example you can generate message to call the contract by SDK function. That 
 **A**: The sample message at <https://test.ton.org/testnet/transaction?account=EQDXAswEFIWNg6VTijwchiMYcvAGRTr3yCWln53RLWNq8CvQ<=195287000001&hash=7F09EC8EEBBAF510D7873CD3DEC494B2DD28A790A7A46E83D0A183F3E672B509> has no init (it is `init:nothing`), and a transaction with this message is aborted. But in general, the StateInit data attached to a message is used by the node only once: when a contract is in the Uninit state. Replays of such message can succeed, but the contract code will not be changed. An Init msg created with sol2tvm compiler and tvm_linker contains an encoded constructor call. Now you can call constructor multiple times, but in future releases it will be changed.
 
 
-  

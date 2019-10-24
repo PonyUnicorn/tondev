@@ -30,7 +30,7 @@ Any supported development/runtime environment can run TON Labs Client Libraries 
 
 > **Warning**: Docker utilizes a built-in virtual machine management component called Hyper-V to run itself. It is not a feature of Windows Home edition. Therefore, the solution cannot be installed on Windows Home Edition. All the other Windows editions fit the required criteria. 
 
-> **Tip**: If you are a Windows Home user, try installing a VM according to the doc [here](https://docs.ton.dev/86757ecb2/p/69f25e).
+> **Tip**: If you are a Windows Home user, try installing a VM according to the doc [here](/SDK/Auxiliaries/Installing Ubuntu VM).
 
 ## Sources
 
